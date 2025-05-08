@@ -4,8 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-purple-200: #eecffc;
   --color-purple-500: #7b1fa2;
   --color-neutral-0: #ffffff;
+  --color-text-light: #6d6f73;
   --color-neutral-50: #f5f6f9;
   --color-neutral-100: #eef0f5;
   --color-neutral-500: #02a117;
@@ -14,6 +16,7 @@
   --color-teal-50: #00a296;
   --color-teal-400: #00a296;
   --color-teal-600: #027a7a;
+  --color-decorative: #a8adb7;
   --color-green-500: #02a117;
   --color-yellow-500: #ffb300;
 

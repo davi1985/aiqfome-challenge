@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
+import { Header } from '@/components/header'
 
 const nunitoFont = Nunito({
   subsets: ['latin'],
@@ -21,6 +22,7 @@ const RootLayout = ({
       className={`${nunitoFont.className}  antialiased`}
       suppressHydrationWarning
     >
+      <Header />
       {children}
     </body>
   </html>
