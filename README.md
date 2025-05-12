@@ -24,14 +24,21 @@ Na tela inicial, os estabelecimentos são listados e organizados por status de "
 
 ## 🖼️ Screenshots
 
-- Página inicial com estabelecimentos organizados por status:
-  ![home](./public/screens/home.png)
+<div align="center">
 
-- Página de produtos de um estabelecimento:
-  ![products](./public/screens/products.png)
+### 🏠 Página inicial com estabelecimentos organizados por status
 
-- Página de resumo do pedido:
-  ![ticket](./public/screens/ticket.png)
+<img src="./public/screens/home.png" alt="Página inicial" width="600" />
+
+### 🍔 Página de produtos de um estabelecimento
+
+<img src="./public/screens/products.png" alt="Produtos do estabelecimento" width="600" />
+
+### 🧾 Página de resumo do pedido (ticket)
+
+<img src="./public/screens/ticket.png" alt="Resumo do pedido" width="600" />
+
+</div>
 
 ## Diferenciais
 
