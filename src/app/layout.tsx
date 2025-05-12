@@ -1,7 +1,7 @@
+import { Header } from '@/components/header'
 import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
-import { Header } from '@/components/header'
 
 const nunitoFont = Nunito({
   subsets: ['latin'],
@@ -18,8 +18,13 @@ const RootLayout = ({
   children: React.ReactNode
 }>) => (
   <html lang="pt-BR">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
     <body
-      className={`${nunitoFont.className}  antialiased`}
+      className={`${nunitoFont.className}  antialiased overflow-auto`}
       suppressHydrationWarning
     >
       <Header />
