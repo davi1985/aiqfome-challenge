@@ -1,0 +1,242 @@
+{
+  "foodPlaces": [
+    {
+      "id": "1",
+      "name": "Matsuri Concept",
+      "image": "/static/matsuri.png",
+      "status": "open",
+      "deliveryFee": null,
+      "rating": 4.7,
+      "menu": {
+        "categories": [
+          {
+            "id": "1",
+            "name": "Temakis",
+            "description": "sushi em forma de cone com salmão e cream cheese",
+            "hasPromo": true,
+            "products": [
+              {
+                "id": "1",
+                "name": "Califónia",
+                "description": "Kani, pepino e maçã ou manga",
+                "price": 17.00,
+                "newPrice": 12.99,
+                "image": "/static/image-2.jpg",
+                "sizes": [
+                  "médio",
+                  "grande"
+                ],
+                "icon": "",
+                "sides": [
+                  "missohiro",
+                  "sunomono",
+                  "gohan"
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Filadélfia",
+                "description": "Arroz, salmão fresco, cream cheese e cebolinha",
+                "price": 17.00,
+                "newPrice": 13.99,
+                "image": "/static/image-1.png",
+                "sizes": [
+                  "médio",
+                  "grande"
+                ],
+                "icon": "",
+                "sides": [
+                  "missohiro",
+                  "sunomono",
+                  "gohan"
+                ]
+              },
+              {
+                "id": "3",
+                "name": "Mix",
+                "description": "Escolha 3 ingredientes: shimeji, alface americana, rúcula, pepino, tomate seco, cream cheese, maionese, goiabada, banana, requeijão, molho de maracujá, manga, maçã e morango.",
+                "price": 13.99,
+                "image": "/static/image-2.jpg",
+                "sizes": [
+                  "médio",
+                  "grande"
+                ],
+                "icon": "",
+                "sides": [
+                  "missohiro",
+                  "sunomono",
+                  "gohan"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "name": "Ceviches",
+            "description": "um prato super refrescante de peixe fatiado e marinado com limão",
+            "products": [
+              {
+                "id": "1",
+                "name": "Ceviche Clássico",
+                "description": "Peixe fresco, cebola roxa, limão, pimentão, coentro e sal",
+                "price": 19.90,
+                "image": "/static/image-1.png",
+                "sizes": [
+                  "médio",
+                  "grande"
+                ],
+                "icon": "",
+                "sides": [
+                  "batata-doce",
+                  "salada",
+                  "banana chips"
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Ceviche de salmão",
+                "description": "salmão temperado com limão, cebola e pimenta",
+                "price": 19.90,
+                "image": "/static/image-2.jpg",
+                "sizes": [
+                  "médio",
+                  "grande"
+                ],
+                "icon": "",
+                "sides": [
+                  "batata-doce",
+                  "salada",
+                  "banana chips"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "3",
+            "name": "Niguiris",
+            "description": "Peixe fresco sobre bolinhos de arroz",
+            "products": [
+              {
+                "id": "1",
+                "name": "Niguiri de Salmão",
+                "description": "Fatias de salmão fresco sobre bolinhos de arroz",
+                "price": 15.90,
+                "image": "/static/image-1.png",
+                "sizes": [
+                  "médio",
+                  "grande"
+                ],
+                "icon": "",
+                "sides": [
+                  "missohiro",
+                  "sunomono",
+                  "gohan"
+                ]
+              },
+              {
+                "id": "2",
+                "name": "Niguiri de Atum",
+                "description": "Fatias de atum fresco sobre bolinhos de arroz",
+                "price": 19.00,
+                "image": "/static/image-2.png",
+                "sizes": [
+                  "médio",
+                  "grande"
+                ],
+                "icon": "",
+                "sides": [
+                  "missohiro",
+                  "sunomono",
+                  "gohan"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "4",
+            "name": "Bebidas",
+            "description": "Seleção de bebidas refrescantes e tradicionais",
+            "products": [
+              {
+                "id": "1",
+                "name": "Fanta Laranja",
+                "description": "Fanta Laranja",
+                "price": 6.00,
+                "image": "/static/image-1.png",
+                "icon": ""
+              },
+              {
+                "id": "2",
+                "name": "Suco Natural",
+                "description": "Laranja, abacaxi ou manga",
+                "price": 8.00,
+                "image": "/static/image-1.png",
+                "icon": ""
+              },
+              {
+                "id": "3",
+                "name": "Água sem gás",
+                "description": "Laranja, abacaxi ou manga",
+                "price": 8.00,
+                "image": "/static/image-1.png",
+                "icon": ""
+              }
+            ]
+          },
+          {
+            "id": "5",
+            "name": "Sobremesas",
+            "description": "Deliciosas opções de sobremesas para finalizar sua refeição",
+            "products": [
+              {
+                "id": "1",
+                "name": "Mousse de Maracujá",
+                "description": "Mousse cremosa de maracujá",
+                "price": 10.90,
+                "image": "/static/image-1.png",
+                "icon": ""
+              },
+              {
+                "id": "2",
+                "name": "Bolo de Chocolate",
+                "description": "Bolo fofinho de chocolate com cobertura cremosa",
+                "price": 12.90,
+                "image": "/static/image-1.png",
+                "icon": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "name": "Subway - Avenida center",
+      "deliveryFee": 6.00,
+      "image": "/static/subway.png",
+      "status": "open",
+      "rating": 4.8,
+      "menu": {}
+    },
+    {
+      "id": "3",
+      "name": "McDonald’s - Novo Centro",
+      "deliveryFee": null,
+      "status": "open",
+      "image": "/static/mac-donalds.png",
+      "rating": 4.2,
+      "menu": {}
+    },
+    {
+      "id": "4",
+      "name": "Burguer King - Colombo",
+      "image": "/static/burger-king.png",
+      "deliveryFee": 6.00,
+      "status": "closed",
+      "rating": 4.7,
+      "menu": {
+        "categories": []
+      }
+    }
+  ]
+}
