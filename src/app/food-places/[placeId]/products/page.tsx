@@ -1,0 +1,100 @@
+'use client'
+
+import { Products } from '@/components/products'
+import { useGetProducts } from '@/hooks/use-get-products'
+import { HttpClientImpl } from '@/infra/http-client/impl/http-client-impl'
+import { formatCurrency } from '@/lib/utils'
+import { ChevronRightIcon, Heart, Share2, Star } from 'lucide-react'
+import Image from 'next/image'
+
+const FoodPlacePage = () => {
+  const { data } = useGetProducts(HttpClientImpl.create())
+
+  return (
+    <>
+      <div className="flex flex-col px-4 py-6">
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <Image
+              src={data?.image}
+              alt="banner"
+              className="object-cover rounded-sm"
+              width={36}
+              height={36}
+            />
+
+            <h2 className="text-xl font-extrabold text-neutral-900">
+              {data.name}
+            </h2>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="flex gap-3 p-1.5">
+              <Share2 className="w-4 h-4 -scale-100 text-purple-700" />
+              <Heart className="w-4 h-4 text-purple-700" />
+            </div>
+
+            <div className="flex items-center gap-1">
+              <span className="text-teal-400 font-bold">mais infos</span>
+              <ChevronRightIcon className="w-3 h-3 text-teal-400" />
+            </div>
+          </div>
+
+          <div className="flex items-center gap-[6px]">
+            <div className="flex items-center gap-1">
+              <Image
+                src={'/static/icons/motorcycle-2.svg'}
+                alt="banner"
+                className="object-cover rounded-sm"
+                width={24}
+                height={24}
+              />
+
+              <span className="text-purple-500 font-bold text-sm flex items-center gap-1">
+                {formatCurrency(data.deliveryFee ?? 0)}
+                <ChevronRightIcon className="w-2 h-2 text-purple-500" />
+              </span>
+            </div>
+
+            <div className="w-1 h-1 bg-decorative rounded-full" />
+
+            <span className="font-bold text-xs text-text-light">
+              hoje, 30-40 min
+            </span>
+
+            <div className="w-1 h-1 bg-decorative rounded-full" />
+
+            <span className="font-bold text-xs text-text-light">5.2km</span>
+          </div>
+
+          <div className="bg-neutral-20 px-2 py-1.5 w-fit rounded-sm">
+            <span className="text-teal-600 font-bold text-xs">
+              Entrega grátis acima de {formatCurrency(35)}
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-1 font-bold text-xs">
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                <Star className="w-4 h-4 text-yellow-500" fill="#FFB300" />
+                <span className="text-text-light">{data.rating} de 5</span>
+                <ChevronRightIcon className="w-2.5 h-2.5 text-text-light" />
+              </div>
+              <div className="w-1 h-1 bg-decorative rounded-full" />
+
+              <span className="text-text-light">fecha às 20:00</span>
+            </div>
+
+            <span className="text-text-light">
+              Pedido mínimo: {formatCurrency(15)}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <Products products={data.menu} foodPlaceId={data.id} />
+    </>
+  )
+}
+
+export default FoodPlacePage
