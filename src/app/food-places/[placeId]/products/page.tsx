@@ -1,14 +1,22 @@
 'use client'
 
 import { Products } from '@/components/products'
+import { labels } from '@/constants'
+import { useHeader } from '@/contexts/header'
 import { useGetProducts } from '@/hooks/use-get-products'
 import { HttpClientImpl } from '@/infra/http-client/impl/http-client-impl'
 import { formatCurrency } from '@/lib/utils'
 import { ChevronRightIcon, Heart, Share2, Star } from 'lucide-react'
 import Image from 'next/image'
+import { useLayoutEffect } from 'react'
 
 const FoodPlacePage = () => {
   const { data } = useGetProducts(HttpClientImpl.create())
+  const { handleHiddenSearchInput } = useHeader()
+
+  useLayoutEffect(() => {
+    handleHiddenSearchInput()
+  }, [handleHiddenSearchInput])
 
   return (
     <>
@@ -35,7 +43,9 @@ const FoodPlacePage = () => {
             </div>
 
             <div className="flex items-center gap-1">
-              <span className="text-teal-400 font-bold">mais infos</span>
+              <span className="text-teal-400 font-bold">
+                {labels.foodPlace.moreInfo}
+              </span>
               <ChevronRightIcon className="w-3 h-3 text-teal-400" />
             </div>
           </div>
@@ -59,17 +69,19 @@ const FoodPlacePage = () => {
             <div className="w-1 h-1 bg-decorative rounded-full" />
 
             <span className="font-bold text-xs text-text-light">
-              hoje, 30-40 min
+              {labels.foodPlace.today}
             </span>
 
             <div className="w-1 h-1 bg-decorative rounded-full" />
 
-            <span className="font-bold text-xs text-text-light">5.2km</span>
+            <span className="font-bold text-xs text-text-light">
+              {labels.foodPlace.distance}
+            </span>
           </div>
 
           <div className="bg-neutral-20 px-2 py-1.5 w-fit rounded-sm">
             <span className="text-teal-600 font-bold text-xs">
-              Entrega grátis acima de {formatCurrency(35)}
+              {labels.foodPlace.feeDeliveryLabel} {formatCurrency(35)}
             </span>
           </div>
 
@@ -77,16 +89,21 @@ const FoodPlacePage = () => {
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 text-yellow-500" fill="#FFB300" />
-                <span className="text-text-light">{data.rating} de 5</span>
+                <span className="text-text-light">
+                  {data.rating}
+                  {labels.foodPlace.stars}
+                </span>
                 <ChevronRightIcon className="w-2.5 h-2.5 text-text-light" />
               </div>
               <div className="w-1 h-1 bg-decorative rounded-full" />
 
-              <span className="text-text-light">fecha às 20:00</span>
+              <span className="text-text-light">
+                {labels.foodPlace.closeTime}
+              </span>
             </div>
 
             <span className="text-text-light">
-              Pedido mínimo: {formatCurrency(15)}
+              {labels.foodPlace.minOrderValue} {formatCurrency(15)}
             </span>
           </div>
         </div>

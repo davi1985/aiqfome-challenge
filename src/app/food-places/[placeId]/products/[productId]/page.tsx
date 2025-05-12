@@ -5,11 +5,14 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Textarea } from '@/components/ui/textarea'
+import { labels } from '@/constants'
+import { useHeader } from '@/contexts/header'
 import { useGetProductDetails } from '@/hooks/use-get-product-details'
 import { HttpClientImpl } from '@/infra/http-client/impl/http-client-impl'
 import { formatCurrency } from '@/lib/utils'
 import { MinusIcon, PlusIcon } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { useLayoutEffect } from 'react'
 
 const utensils = [
   { id: 1, name: 'Hashi' },
@@ -25,6 +28,11 @@ const extra = [
 const ProductDetailPage = () => {
   const { data } = useGetProductDetails(HttpClientImpl.create())
   const router = useRouter()
+  const { handleHiddenSearchInput } = useHeader()
+
+  useLayoutEffect(() => {
+    handleHiddenSearchInput()
+  }, [handleHiddenSearchInput])
 
   return (
     <div className="flex flex-col">
@@ -40,7 +48,7 @@ const ProductDetailPage = () => {
         <h2 className="font-bold text-xl text-neutral-700">{data.name}</h2>
 
         <span className="font-bold text-text-light text-sm flex items-center">
-          a partir de
+          {labels.productDetails.priceFrom}
           <span className="text-purple-500 font-extrabold text-lg ml-2">
             {formatCurrency(data.price)}
           </span>
@@ -53,10 +61,10 @@ const ProductDetailPage = () => {
         <div className="flex items-center justify-between mt-4">
           <div className="flex flex-col">
             <span className="font-bold text-neutral-700 text-base">
-              Quantos ?
+              {labels.productDetails.quantity}
             </span>
             <span className="text-text-light font-semibold">
-              Total:
+              {labels.productDetails.total}
               <span className="ml-2 font-bold text-neutral-700">
                 {formatCurrency(19)}
               </span>
@@ -67,7 +75,7 @@ const ProductDetailPage = () => {
             size={'default'}
             className="bg-text-light font-bold text-sm text-white"
           >
-            Adicionar
+            {labels.productDetails.add}
           </Button>
         </div>
       </div>
@@ -76,10 +84,10 @@ const ProductDetailPage = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col">
             <span className="font-bold text-neutral-700 text-base">
-              Qual o tamanho ?
+              {labels.productDetails.size.label}
             </span>
             <span className="text-text-light text-xs font-semibold">
-              escolha 1
+              {labels.productDetails.size.span}
             </span>
           </div>
 
@@ -87,7 +95,7 @@ const ProductDetailPage = () => {
             size={'xs'}
             className="font-bold text-xs text-white bg-neutral-700"
           >
-            Obrigatório
+            {labels.productDetails.size.required}
           </Button>
         </div>
 
@@ -102,16 +110,9 @@ const ProductDetailPage = () => {
                   </Label>
                 </div>
 
-                {/* {data?.newPrice ? (
-                  <div>
-                    <span>de {formatCurrency(data.price)} por</span>
-                    <span>{formatCurrency(data.newPrice)}</span>
-                  </div>
-                ) : ( */}
                 <div className="text-purple-500 font-bold text-sm">
                   {formatCurrency(data.price)}
                 </div>
-                {/* )} */}
               </div>
             ))}
           </RadioGroup>
@@ -122,10 +123,10 @@ const ProductDetailPage = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col">
             <span className="font-bold text-neutral-700 text-base">
-              Acompanhamentos
+              {labels.productDetails.sides.label}
             </span>
             <span className="text-text-light text-xs font-semibold">
-              escolha de 1 a 2
+              {labels.productDetails.sides.span}
             </span>
           </div>
 
@@ -133,7 +134,7 @@ const ProductDetailPage = () => {
             size={'xs'}
             className="font-bold text-xs text-white bg-neutral-700"
           >
-            Obrigatório
+            {labels.productDetails.sides.required}
           </Button>
         </div>
 
@@ -158,10 +159,10 @@ const ProductDetailPage = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col">
             <span className="font-bold text-neutral-700 text-base">
-              Vai querer bebida ?
+              {labels.productDetails.drinks.label}
             </span>
             <span className="text-text-light text-xs font-semibold">
-              escolha quantos quiser
+              {labels.productDetails.drinks.span}
             </span>
           </div>
         </div>
@@ -178,7 +179,9 @@ const ProductDetailPage = () => {
               <PlusIcon className="w-4 h-4 text-teal-400" />
             </button>
 
-            <span className="font-bold text-text-light">Coca-cola</span>
+            <span className="font-bold text-text-light">
+              {labels.productDetails.drinks.items.coke}
+            </span>
           </div>
           <span className="text-purple-500 font-bold text-sm">
             +{formatCurrency(5)}
@@ -197,7 +200,9 @@ const ProductDetailPage = () => {
               <PlusIcon className="w-4 h-4 text-teal-400" />
             </button>
 
-            <span className="font-bold text-text-light">Fanta Laranja</span>
+            <span className="font-bold text-text-light">
+              {labels.productDetails.drinks.items.orange}
+            </span>
           </div>
 
           <span className="text-purple-500 font-bold text-sm">
@@ -217,7 +222,9 @@ const ProductDetailPage = () => {
               <PlusIcon className="w-4 h-4 text-teal-400" />
             </button>
 
-            <span className="font-bold text-text-light">Água sem gás</span>
+            <span className="font-bold text-text-light">
+              {labels.productDetails.drinks.items.water}
+            </span>
           </div>
 
           <span className="text-purple-500 font-bold text-sm">
@@ -230,10 +237,10 @@ const ProductDetailPage = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col">
             <span className="font-bold text-neutral-700 text-base">
-              Precisa de talher ?
+              {labels.productDetails.utensils.label}
             </span>
             <span className="text-text-light text-xs font-semibold">
-              escolha até 1
+              {labels.productDetails.utensils.span}
             </span>
           </div>
         </div>
@@ -267,10 +274,10 @@ const ProductDetailPage = () => {
         <div className="flex items-center justify-between mb-4">
           <div className="flex flex-col">
             <span className="font-bold text-neutral-700 text-base">
-              Mais alguma coisa ?
+              {labels.productDetails.utensils.label}
             </span>
             <span className="text-text-light text-xs font-semibold">
-              escolha até 2
+              {labels.productDetails.utensils.span}
             </span>
           </div>
         </div>
@@ -299,12 +306,12 @@ const ProductDetailPage = () => {
       </div>
 
       <div className="p-4">
-        <Textarea placeholder="alguma observação do item? • opcional \nex: tirar algum ingrediente, ponto do prato" />
+        <Textarea placeholder={labels.productDetails.textarea.placeholder} />
       </div>
 
       <div className="w-full flex flex-col items-center justify-center pt-6 mt-11 bg-neutral-100">
         <span className="font-bold text-purple-700 text-sm">
-          Feito com 💜 em Maringá-PR
+          {labels.productDetails.footer.text}
         </span>
 
         <div className="px-6 py-4 w-full">
@@ -312,7 +319,7 @@ const ProductDetailPage = () => {
             className="w-full h-12 bg-purple-500 font-bold text-base"
             onClick={() => router.push('/ticket')}
           >
-            Ver ticket
+            {labels.productDetails.footer.button}
           </Button>
         </div>
       </div>

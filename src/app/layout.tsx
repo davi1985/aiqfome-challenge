@@ -1,16 +1,18 @@
+'use client'
+
 import { Header } from '@/components/header'
-import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 import './globals.css'
+import { HeaderProvider } from '@/contexts/header'
 
 const nunitoFont = Nunito({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = {
-  title: 'aiqfome Magalu',
-  description: 'Frontend Challenge',
-}
+// const metadata: Metadata = {
+//   title: 'aiqfome Magalu',
+//   description: 'Frontend Challenge',
+// }
 
 const RootLayout = ({
   children,
@@ -27,8 +29,10 @@ const RootLayout = ({
       className={`${nunitoFont.className}  antialiased overflow-auto`}
       suppressHydrationWarning
     >
-      <Header />
-      {children}
+      <HeaderProvider>
+        <Header />
+        {children}
+      </HeaderProvider>
     </body>
   </html>
 )

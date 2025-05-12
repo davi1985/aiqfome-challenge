@@ -1,6 +1,7 @@
 import { ProductCartHeader } from '@/components/product-cart-header'
 import { QuantitySelector } from '@/components/quantity-selector'
 import { Button } from '@/components/ui/button'
+import { labels } from '@/constants'
 import { formatCurrency } from '@/lib/utils'
 import Image from 'next/image'
 
@@ -19,7 +20,7 @@ const Ticket = () => {
 
           <div className="flex flex-col">
             <span className="text-sm font-bold text-text-light">
-              seus itens em
+              {labels.ticket.header}
             </span>
             <h2 className="text-base font-bold text-neutral-900">
               Matsuri Concept
@@ -34,7 +35,9 @@ const Ticket = () => {
 
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <span className="font-bold text-xs text-text-light">• Tamanho</span>
+            <span className="font-bold text-xs text-text-light">
+              • {labels.ticket.size}
+            </span>
             <span className="font-semibold text-xs text-decorative ml-3">
               médio
             </span>
@@ -42,7 +45,7 @@ const Ticket = () => {
 
           <div className="flex flex-col">
             <span className="font-bold text-xs text-text-light">
-              • Vai querer bebida ?
+              • {labels.ticket.drink}
             </span>
 
             <span className="font-semibold text-xs text-text-light flex gap-2 ml-3">
@@ -61,7 +64,9 @@ const Ticket = () => {
 
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <span className="font-bold text-xs text-text-light">• Tamanho</span>
+            <span className="font-bold text-xs text-text-light">
+              • {labels.ticket.size}
+            </span>
             <span className="font-semibold text-xs text-decorative ml-3">
               médio
             </span>
@@ -69,7 +74,7 @@ const Ticket = () => {
 
           <div className="flex flex-col">
             <span className="font-bold text-xs text-text-light">
-              • Vai querer bebida ?
+              • {labels.ticket.drink}
             </span>
 
             <span className="font-semibold text-xs text-text-light flex gap-2 ml-3">
@@ -88,7 +93,9 @@ const Ticket = () => {
 
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <span className="font-bold text-xs text-text-light">• Tamanho</span>
+            <span className="font-bold text-xs text-text-light">
+              • {labels.ticket.size}
+            </span>
             <span className="font-semibold text-xs text-decorative ml-3">
               médio
             </span>
@@ -96,7 +103,7 @@ const Ticket = () => {
 
           <div className="flex flex-col">
             <span className="font-bold text-xs text-text-light">
-              • Vai querer bebida ?
+              • {labels.ticket.drink}
             </span>
 
             <span className="font-semibold text-xs text-text-light flex gap-2 ml-3">
@@ -111,7 +118,9 @@ const Ticket = () => {
 
       <div className="fixed bottom-0 shadow-[0px_0px_15px_0px_#00000026] rounded-t-xl px-4 py-8 flex items-center w-full gap-7 bg-white">
         <div className="flex flex-col">
-          <span className="font-bold text-sm text-neutral-900">Subtotal</span>
+          <span className="font-bold text-sm text-neutral-900">
+            {labels.ticket.subtotal}
+          </span>
           <span className="font-extrabold text-purple-500 text-xl">
             {formatCurrency(112)}
           </span>
@@ -119,7 +128,7 @@ const Ticket = () => {
 
         <div className="flex w-full">
           <Button className="bg-purple-500 w-full h-12 font-bold">
-            Ir para pagamento
+            {labels.ticket.button}
           </Button>
         </div>
       </div>

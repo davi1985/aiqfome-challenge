@@ -1,4 +1,5 @@
 import { FoodPlace as Props } from '@/@types'
+import { labels } from '@/constants'
 import { formatCurrency } from '@/lib/utils'
 import { Star } from 'lucide-react'
 import Image from 'next/image'
@@ -7,7 +8,7 @@ import Link from 'next/link'
 export const FoodPlace = ({ place }: { place: Props }) => (
   <Link
     href={`/food-places/${place.id}/products`}
-    className="bg-neutral-50 h-20 rounded-lg overflow-hidden flex hover"
+    className="bg-neutral-50 h-20 rounded-lg overflow-hidden flex hover md:w-full md:h-25"
     key={place.id}
   >
     <Image src={place.image} alt="banner" width={72} height={72} />
@@ -40,7 +41,9 @@ export const FoodPlace = ({ place }: { place: Props }) => (
                 height={32}
               />
 
-              <span className="text-teal-600 font-bold text-sm">gratis</span>
+              <span className="text-teal-600 font-bold text-sm">
+                {labels.foodPlaces.feeDelivery}
+              </span>
             </>
           )}
         </div>
