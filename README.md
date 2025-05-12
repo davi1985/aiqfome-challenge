@@ -16,7 +16,7 @@ Na tela inicial, os estabelecimentos são listados e organizados por status de "
 
 ## Boas práticas adotadas
 
-- **Arquitetura modular** com separação clara por domínio (`features`, `infra`, `services`)
+- **Arquitetura modular** com separação clara por domínio (`infra`, `services`, etc)
 - **Hooks customizados** para consumo de dados
 - **Uso do App Router e Server Components** do Next.js 14+
 - **Responsividade e UX Mobile First**
@@ -74,5 +74,5 @@ src/
 
 - [ ] Adicionar testes automatizados
 - [ ] Permitir alteração de opções do pedido (bebida, tamanho etc.)
-- [ ] Persistência do carrinho com `localStorage`
+- [x] Persistência do carrinho com `localStorage`
 - [ ] Tela de finalização de pedido
