@@ -79,9 +79,9 @@ src/
 ## Como executar
 
 1. Clonar o repositório
-   `git clone https://github.com/davi1985/aiqfome-challenge-magalu`
+   `git clone https://github.com/davi1985/aiqfome-challenge`
 2. Entrar na pasta do projeto
-   `cd aiqfome-challenge-magalu`
+   `cd aiqfome-challenge`
 3. Instalar as dependências
    ` pnpm install`
 4. Executar o comando `dev`
