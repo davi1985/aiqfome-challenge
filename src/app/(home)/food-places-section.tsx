@@ -2,7 +2,7 @@
 
 import { FoodPlace } from '@/components/food-place'
 import { labels } from '@/constants'
-import { useFoodPlaces } from '@/hooks/use-food-places'
+import { useFoodPlaces } from '@/services/use-food-places'
 import { HttpClientImpl } from '@/infra/http-client/impl/http-client-impl'
 
 export const FoodPlacesSection = () => {

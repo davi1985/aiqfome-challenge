@@ -3,7 +3,7 @@
 import { Products } from '@/components/products'
 import { labels } from '@/constants'
 import { useHeader } from '@/contexts/header'
-import { useGetProducts } from '@/hooks/use-get-products'
+import { useGetProducts } from '@/services/use-get-products'
 import { HttpClientImpl } from '@/infra/http-client/impl/http-client-impl'
 import { formatCurrency } from '@/lib/utils'
 import { ChevronRightIcon, Heart, Share2, Star } from 'lucide-react'

@@ -4,7 +4,7 @@ import { ProductCartHeader } from '@/components/product-cart-header'
 import { QuantitySelector } from '@/components/quantity-selector'
 import { Button } from '@/components/ui/button'
 import { labels } from '@/constants'
-import { useGetCartData } from '@/hooks/use-get-cart-data'
+import { useGetCartData } from '@/services/use-get-cart-data'
 import { formatCurrency } from '@/lib/utils'
 import Image from 'next/image'
 
