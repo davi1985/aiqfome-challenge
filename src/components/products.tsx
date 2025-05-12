@@ -30,7 +30,7 @@ export const Products = ({ products, foodPlaceId }: Props) => {
                   <CircleDollarSign className="w-4 h-4 text-green-500" />
                 ) : null}
               </div>
-              <span className="font-semibold text-xs text-text-light">
+              <span className="font-semibold text-xs text-neutral-500">
                 {item.description}
               </span>
             </div>

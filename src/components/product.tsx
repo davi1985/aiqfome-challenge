@@ -16,7 +16,7 @@ export const Product = ({ product, foodPlaceId }: ProductProps) => {
     >
       <div className="flex flex-col">
         <span className="font-semibold text-sm">{product.name}</span>
-        <span className="text-xs text-text-light line-clamp-2">
+        <span className="text-xs text-neutral-500 line-clamp-2">
           {product.description}
         </span>
       </div>
@@ -24,7 +24,7 @@ export const Product = ({ product, foodPlaceId }: ProductProps) => {
       <div className="flex flex-col">
         {product.newPrice ? (
           <div className="flex flex-col items-end">
-            <span className="text-xs font-bold text-text-light line-through">
+            <span className="text-xs font-bold text-neutral-500 line-through">
               {formatCurrency(product.price)}
             </span>
 
@@ -37,10 +37,10 @@ export const Product = ({ product, foodPlaceId }: ProductProps) => {
           </div>
         ) : (
           <>
-            <span className="text-xs font-bold text-text-light">
+            <span className="text-xs font-bold text-neutral-500">
               a partir de
             </span>
-            <span className="text-sm font-bold text-text-light">
+            <span className="text-sm font-bold text-neutral-500">
               {formatCurrency(product.price)}
             </span>
           </>

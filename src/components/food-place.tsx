@@ -27,7 +27,7 @@ export const FoodPlace = ({ place }: { place: Props }) => (
                 height={32}
               />
 
-              <span className="text-purple-500‚ font-bold text-sm">
+              <span className="text-purple-500 font-bold text-sm">
                 {formatCurrency(place.deliveryFee)}
               </span>
             </>
@@ -52,7 +52,7 @@ export const FoodPlace = ({ place }: { place: Props }) => (
 
         <div className="flex gap-1">
           <Star className="w-5 h-5 text-yellow-500" fill="#FFB300" />
-          <span className="text-text-light font-bold text-sm">
+          <span className="text-neutral-500 font-bold text-sm">
             {place.rating}
           </span>
         </div>

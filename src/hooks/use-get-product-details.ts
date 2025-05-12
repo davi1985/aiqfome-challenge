@@ -37,5 +37,6 @@ export const useGetProductDetails = (httClient: HttpClient) => {
     loading,
     error,
     data,
+    placeId,
   }
 }

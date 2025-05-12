@@ -216,7 +216,9 @@
       "image": "/static/subway.png",
       "status": "open",
       "rating": 4.8,
-      "menu": {}
+      "menu": {
+        "categories": []
+      }
     },
     {
       "id": "3",
@@ -225,7 +227,9 @@
       "status": "open",
       "image": "/static/mac-donalds.png",
       "rating": 4.2,
-      "menu": {}
+      "menu": {
+        "categories": []
+      }
     },
     {
       "id": "4",

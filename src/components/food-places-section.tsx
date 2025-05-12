@@ -1,6 +1,5 @@
 'use client'
 
-import { Footer } from '@/components/footer'
 import { Products } from '@/components/products'
 import { labels } from '@/constants'
 import { useHeader } from '@/contexts/header'
@@ -26,7 +25,6 @@ const FoodPlacePage = () => {
           <div className="flex items-center gap-2">
             <Image
               src={data?.image}
-              defaultValue={'/static/subway.png'}
               alt="banner"
               className="object-cover rounded-sm"
               width={36}
@@ -45,7 +43,7 @@ const FoodPlacePage = () => {
             </div>
 
             <div className="flex items-center gap-1">
-              <span className="text-teal-400 text-xs font-bold">
+              <span className="text-teal-400 font-bold">
                 {labels.foodPlace.moreInfo}
               </span>
               <ChevronRightIcon className="w-3 h-3 text-teal-400" />
@@ -63,7 +61,7 @@ const FoodPlacePage = () => {
               />
 
               <span className="text-purple-500 font-bold text-sm flex items-center gap-1">
-                {data.deliveryFee ? formatCurrency(data.deliveryFee) : 'grátis'}
+                {formatCurrency(data.deliveryFee ?? 0)}
                 <ChevronRightIcon className="w-2 h-2 text-purple-500" />
               </span>
             </div>
@@ -87,7 +85,7 @@ const FoodPlacePage = () => {
             </span>
           </div>
 
-          <div className="flex flex-col gap-2 font-bold text-xs">
+          <div className="flex flex-col gap-1 font-bold text-xs">
             <div className="flex items-center gap-2">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 text-yellow-500" fill="#FFB300" />
@@ -112,8 +110,6 @@ const FoodPlacePage = () => {
       </div>
 
       <Products products={data.menu} foodPlaceId={data.id} />
-
-      <Footer />
     </>
   )
 }

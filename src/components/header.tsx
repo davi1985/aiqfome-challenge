@@ -8,7 +8,6 @@ import { useHeader } from '@/contexts/header'
 export const Header = () => {
   const { showSearchInput } = useHeader()
 
-  console.log(showSearchInput)
   return (
     <div className="flex w-full bg-purple-500 p-4 flex-col gap-4">
       <div className="flex items-center justify-between">
@@ -43,7 +42,7 @@ export const Header = () => {
           <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 transform text-decorative" />
           <Input
             placeholder={labels.header.input.placeholder}
-            className=" pl-8 bg-neutral-0 font-semibold text-sm leading-3.5 placeholder-text-light"
+            className=" pl-8 bg-neutral-0 font-semibold text-sm leading-3.5 placeholder-neutral-500"
           />
         </div>
       )}
