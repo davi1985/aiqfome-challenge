@@ -28,15 +28,15 @@ Na tela inicial, os estabelecimentos são listados e organizados por status de "
 
 ### 🏠 Página inicial com estabelecimentos organizados por status
 
-<img src="./public/screens/home.png" alt="Página inicial" width="600" />
+<img src="./public/screens/home.png" alt="Página inicial" width="300" />
 
 ### 🍔 Página de produtos de um estabelecimento
 
-<img src="./public/screens/products.png" alt="Produtos do estabelecimento" width="600" />
+<img src="./public/screens/products.png" alt="Produtos do estabelecimento" width="300" />
 
 ### 🧾 Página de resumo do pedido (ticket)
 
-<img src="./public/screens/ticket.png" alt="Resumo do pedido" width="600" />
+<img src="./public/screens/ticket.png" alt="Resumo do pedido" width="300" />
 
 </div>
 
