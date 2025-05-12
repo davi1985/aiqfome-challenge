@@ -14,6 +14,22 @@ Na tela inicial, os estabelecimentos são listados e organizados por status de "
 - ShadcnUI
 - Axios
 
+## Boas práticas adotadas
+
+- **Arquitetura modular** com separação clara por domínio (`features`, `infra`, `services`)
+- **Hooks customizados** para consumo de dados
+- **Uso do App Router e Server Components** do Next.js 14+
+- **Responsividade e UX Mobile First**
+- **Padronização de estilo com TailwindCSS + ShadcnUI**
+- **Separação de responsabilidades entre API, View e Lógica de Negócio**
+
+## Diferenciais
+
+- Simulação de BFF usando rotas da API no Next.js
+- Utilização de **protocolo de adapter HTTP** para abstração de chamadas (padrão aplicado com Axios)
+- Criação de uma **experiência fluida com componentes reutilizáveis e estados bem gerenciados**
+- Uso de **`data.json` como mock de dados centralizado**, fácil de trocar por API real
+
 # Estrutura do projeto
 
 ```bash
@@ -53,3 +69,10 @@ src/
    ` pnpm install`
 4. Executar o comando `dev`
    `pnpm run dev`
+
+## Melhorias futuras
+
+- [ ] Adicionar testes automatizados
+- [ ] Permitir alteração de opções do pedido (bebida, tamanho etc.)
+- [ ] Persistência do carrinho com `localStorage`
+- [ ] Tela de finalização de pedido
