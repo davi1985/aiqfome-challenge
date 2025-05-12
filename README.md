@@ -14,14 +14,24 @@ Na tela inicial, os estabelecimentos são listados e organizados por status de "
 - ShadcnUI
 - Axios
 
-## Boas práticas adotadas
+## 🚀 Decisões técnicas
 
-- **Arquitetura modular** com separação clara por domínio (`infra`, `services`, etc)
-- **Hooks customizados** para consumo de dados
-- **Uso do App Router e Server Components** do Next.js 14+
-- **Responsividade e UX Mobile First**
-- **Padronização de estilo com TailwindCSS + ShadcnUI**
-- **Separação de responsabilidades entre API, View e Lógica de Negócio**
+- **App Router do Next.js**: Utilizei o novo sistema de rotas do Next 13+ para explorar Server Components e layouts aninhados.
+- **Tailwind + ShadcnUI**: Para estilização rápida, responsiva e com boa acessibilidade por padrão.
+- **Arquitetura em camadas (services, infra, view)**: Escolha pensada para facilitar a escalabilidade e testabilidade do projeto, simulando práticas de projetos reais.
+- **Consumo da API via Axios + Adapter Pattern**: Seguindo boas práticas de desacoplamento, criei uma camada que permite trocar a lib de requisição futuramente sem afetar os services.
+- **Context API para o header**: Permite comunicação simples e reatividade entre o componente `Header` e o restante da aplicação.
+
+## 🖼️ Screenshots
+
+- Página inicial com estabelecimentos organizados por status:
+  ![home](./public/screens/home.png)
+
+- Página de produtos de um estabelecimento:
+  ![products](./public/screens/products.png)
+
+- Página de resumo do pedido:
+  ![ticket](./public/screens/ticket.png)
 
 ## Diferenciais
 
